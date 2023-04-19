@@ -100,12 +100,6 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xkf-GK-XQa">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="48"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NzM-CM-6Wb">
-                                                        <rect key="frame" x="20" y="12" width="24" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="NzM-CM-6Wb" secondAttribute="height" multiplier="1:1" id="3ri-ou-DYl"/>
-                                                        </constraints>
-                                                    </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="KIo-yT-BgI">
                                                         <rect key="frame" x="63.999999999999986" y="0.0" width="154.66666666666663" height="48"/>
                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
@@ -118,19 +112,30 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="agm-fR-ucD">
+                                                        <rect key="frame" x="20" y="12" width="24" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="agm-fR-ucD" secondAttribute="height" multiplier="1:1" id="R7x-cS-leB"/>
+                                                            <constraint firstAttribute="width" constant="24" id="UWt-DM-oa4"/>
+                                                            <constraint firstAttribute="height" constant="24" id="qFC-wo-L2F"/>
+                                                        </constraints>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="checkboxBTNAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FPH-jR-7B4"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="KIo-yT-BgI" firstAttribute="top" secondItem="Xkf-GK-XQa" secondAttribute="top" id="1t3-Hu-UMV"/>
                                                     <constraint firstItem="phO-53-dlu" firstAttribute="top" secondItem="Xkf-GK-XQa" secondAttribute="top" id="4A0-pv-tg0"/>
-                                                    <constraint firstItem="NzM-CM-6Wb" firstAttribute="leading" secondItem="Xkf-GK-XQa" secondAttribute="leading" constant="20" id="FSe-qG-YYS"/>
+                                                    <constraint firstItem="KIo-yT-BgI" firstAttribute="leading" secondItem="agm-fR-ucD" secondAttribute="trailing" constant="20" id="5OO-4k-7e9"/>
+                                                    <constraint firstItem="agm-fR-ucD" firstAttribute="centerY" secondItem="Xkf-GK-XQa" secondAttribute="centerY" id="Ey3-CC-0x7"/>
                                                     <constraint firstItem="phO-53-dlu" firstAttribute="leading" secondItem="KIo-yT-BgI" secondAttribute="trailing" id="Kqx-er-4qO"/>
                                                     <constraint firstAttribute="trailing" secondItem="phO-53-dlu" secondAttribute="trailing" constant="20" id="XNQ-sN-QdX"/>
                                                     <constraint firstAttribute="bottom" secondItem="phO-53-dlu" secondAttribute="bottom" id="aNt-f3-Qnb"/>
                                                     <constraint firstAttribute="bottom" secondItem="KIo-yT-BgI" secondAttribute="bottom" id="gEU-qA-HFu"/>
-                                                    <constraint firstItem="NzM-CM-6Wb" firstAttribute="centerY" secondItem="Xkf-GK-XQa" secondAttribute="centerY" id="ln3-Dz-Lsf"/>
                                                     <constraint firstItem="KIo-yT-BgI" firstAttribute="width" secondItem="phO-53-dlu" secondAttribute="width" id="mjS-2Z-Qd4"/>
-                                                    <constraint firstItem="KIo-yT-BgI" firstAttribute="leading" secondItem="NzM-CM-6Wb" secondAttribute="trailing" constant="20" id="pUQ-NO-Pv6"/>
-                                                    <constraint firstItem="NzM-CM-6Wb" firstAttribute="height" secondItem="Xkf-GK-XQa" secondAttribute="height" multiplier="0.5" id="qf1-vv-Q3I"/>
+                                                    <constraint firstItem="agm-fR-ucD" firstAttribute="leading" secondItem="Xkf-GK-XQa" secondAttribute="leading" constant="20" id="rDY-F1-si4"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmC-tj-U9m">
@@ -397,7 +402,7 @@
                     </view>
                     <connections>
                         <outlet property="blackView" destination="ctx-pR-gSe" id="bqs-hx-JYm"/>
-                        <outlet property="checkbox" destination="NzM-CM-6Wb" id="hYh-H8-wLe"/>
+                        <outlet property="checkboxBTN" destination="agm-fR-ucD" id="MYY-cq-3Rf"/>
                         <outlet property="forgotPassword" destination="phO-53-dlu" id="KNm-Ix-vbj"/>
                         <outlet property="haventAccountSignUp" destination="G4H-2S-sGc" id="OXq-nB-NLJ"/>
                         <outlet property="passwordEye" destination="ysM-hg-unl" id="FAt-mM-HLB"/>

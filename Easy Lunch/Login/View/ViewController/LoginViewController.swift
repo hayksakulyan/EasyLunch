@@ -14,7 +14,10 @@ class LoginViewController: UIViewController {
    
     
     @IBOutlet weak var haventAccountSignUp: UIButton!
-    @IBOutlet weak var checkbox: UIImageView!
+
+    
+    @IBOutlet weak var checkboxBTN: UIButton!
+    
     @IBOutlet weak var rmemberMe: UILabel!
     @IBOutlet weak var forgotPassword: UILabel!
     @IBOutlet weak var signInBTN: UIButton!
@@ -24,6 +27,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordEye: UIButton!
     @IBOutlet weak var passwordTF: UITextField!
     @IBOutlet weak var wrongPasswordLBL: UILabel!
+    
+    
+    var checkboxChecked: Bool = false
+    var checked = UIImage(systemName: "checkmark")
+    var unChecked = UIImage(systemName: "")
     
    
     
@@ -49,9 +57,9 @@ class LoginViewController: UIViewController {
         let _ = self.signInBTN.applyGradient(colours: [colors.btnGradientColor[0], colors.btnGradientColor[1], colors.btnGradientColor[2]], locations: [0.0, 0.5, 1.0])
         signInBTN.clipsToBounds = true
         blackView.layer.cornerRadius = self.signInBTN.layer.frame.height / 4
-        checkbox.layer.borderWidth = 2
-        checkbox.layer.borderColor = CGColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
-        // senc enk anum vor chxangari mnacac elementneri guynerin
+        checkboxBTN.layer.borderWidth = 2
+        checkboxBTN.layer.borderColor = CGColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
+//         senc enk anum vor chxangari mnacac elementneri guynerin
         blackView.backgroundColor = .gray.withAlphaComponent(0.55)
         let _ = shadow.applyGradient(colours: [UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0), UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0.5)], locations: [0, 1])
         
@@ -89,6 +97,20 @@ class LoginViewController: UIViewController {
             passwordTF.isSecureTextEntry = false
             passwordEye.setImage(image2, for: .normal)
         }
+    }
+    
+    
+    @IBAction func checkboxBTNAction(_ sender: UIButton) {
+        
+        if checkboxChecked == false {
+            checkboxBTN.setImage(checked, for: .normal)
+            checkboxBTN.tintColor = .white
+            checkboxChecked = true
+        } else {
+            checkboxBTN.setImage(nil, for: .normal)
+            checkboxChecked = false
+        }
+        
     }
     
     
