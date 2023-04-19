@@ -60,21 +60,26 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UnQ-kd-MC6">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-zR-lRn">
                                                         <rect key="frame" x="20" y="12" width="24" height="24"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="UnQ-kd-MC6" secondAttribute="height" multiplier="1:1" id="yfv-Q7-Ipj"/>
+                                                            <constraint firstAttribute="width" constant="24" id="AqX-XH-diq"/>
+                                                            <constraint firstAttribute="width" secondItem="W6q-zR-lRn" secondAttribute="height" multiplier="1:1" id="LVu-IR-5g4"/>
+                                                            <constraint firstAttribute="height" constant="24" id="y14-I3-auL"/>
                                                         </constraints>
-                                                    </imageView>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <connections>
+                                                            <action selector="checkboxBTNAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7dA-9J-6en"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="SKC-Ea-bPp" firstAttribute="leading" secondItem="UnQ-kd-MC6" secondAttribute="trailing" constant="20" id="Ezb-Kd-2MC"/>
-                                                    <constraint firstItem="UnQ-kd-MC6" firstAttribute="centerY" secondItem="mmt-RS-K5F" secondAttribute="centerY" id="G2S-fi-kAj"/>
+                                                    <constraint firstItem="W6q-zR-lRn" firstAttribute="centerY" secondItem="mmt-RS-K5F" secondAttribute="centerY" id="EK5-wJ-9eE"/>
                                                     <constraint firstAttribute="trailing" secondItem="SKC-Ea-bPp" secondAttribute="trailing" id="LQA-Du-qhG"/>
                                                     <constraint firstAttribute="bottom" secondItem="SKC-Ea-bPp" secondAttribute="bottom" id="PoE-O8-xgn"/>
-                                                    <constraint firstItem="UnQ-kd-MC6" firstAttribute="height" secondItem="mmt-RS-K5F" secondAttribute="height" multiplier="0.5" id="RGI-5D-PML"/>
-                                                    <constraint firstItem="UnQ-kd-MC6" firstAttribute="leading" secondItem="mmt-RS-K5F" secondAttribute="leading" constant="20" symbolic="YES" id="Txy-gG-Jgt"/>
                                                     <constraint firstItem="SKC-Ea-bPp" firstAttribute="top" secondItem="mmt-RS-K5F" secondAttribute="top" id="hTU-tq-UkR"/>
+                                                    <constraint firstItem="SKC-Ea-bPp" firstAttribute="leading" secondItem="W6q-zR-lRn" secondAttribute="trailing" constant="20" id="iB7-u4-TCV"/>
+                                                    <constraint firstItem="W6q-zR-lRn" firstAttribute="leading" secondItem="mmt-RS-K5F" secondAttribute="leading" constant="20" id="jdH-0l-LRJ"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYC-zC-uQS">
@@ -453,7 +458,7 @@
                     <connections>
                         <outlet property="background" destination="ytG-rE-Hqj" id="WWR-V5-dqg"/>
                         <outlet property="blackView" destination="6UQ-rB-bdG" id="ZFA-OG-6xv"/>
-                        <outlet property="checkbox" destination="UnQ-kd-MC6" id="HZj-I3-aUH"/>
+                        <outlet property="checkboxBTN" destination="W6q-zR-lRn" id="rb3-fb-gXe"/>
                         <outlet property="confirmPasswordEye" destination="r5D-ej-mCT" id="OmZ-Vi-VLJ"/>
                         <outlet property="confirmPasswordTF" destination="J4g-Td-AdP" id="vkK-3X-WQ4"/>
                         <outlet property="emailTF" destination="ZSD-tI-IK3" id="RIh-ML-YRo"/>

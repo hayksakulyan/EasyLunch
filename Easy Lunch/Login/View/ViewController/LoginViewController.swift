@@ -31,7 +31,6 @@ class LoginViewController: UIViewController {
     
     var checkboxChecked: Bool = false
     var checked = UIImage(systemName: "checkmark")
-    var unChecked = UIImage(systemName: "")
     
    
     
