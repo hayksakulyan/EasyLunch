@@ -32,6 +32,7 @@ class RegisterViewController: UIViewController {
     
     var checkboxChecked: Bool = false
     var checked = UIImage(systemName: "checkmark")
+    var greenColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
     
     var colors = ColorsForGradients()
     
@@ -62,7 +63,11 @@ class RegisterViewController: UIViewController {
         passwordTF.isSecureTextEntry = true
         confirmPasswordTF.isSecureTextEntry = true
         
-        haveAccountSignIn.tintColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
+        haveAccountSignIn.tintColor = greenColor
+        usernameTF.tintColor = greenColor
+        emailTF.tintColor = greenColor
+        confirmPasswordTF.tintColor = greenColor
+        passwordTF.tintColor = greenColor
     }
     
   

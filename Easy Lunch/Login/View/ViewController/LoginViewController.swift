@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
     
     var checkboxChecked: Bool = false
     var checked = UIImage(systemName: "checkmark")
+    var greenColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
     
    
     
@@ -58,13 +59,16 @@ class LoginViewController: UIViewController {
         blackView.layer.cornerRadius = self.signInBTN.layer.frame.height / 4
         checkboxBTN.layer.borderWidth = 2
         checkboxBTN.layer.borderColor = CGColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
-//         senc enk anum vor chxangari mnacac elementneri guynerin
+
+        //MARK: only for black background view
         blackView.backgroundColor = .gray.withAlphaComponent(0.55)
         let _ = shadow.applyGradient(colours: [UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0), UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0.5)], locations: [0, 1])
         
         passwordTF.isSecureTextEntry = true
-        haventAccountSignUp.tintColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
-
+        
+        haventAccountSignUp.tintColor = greenColor
+        usernameTF.tintColor = greenColor
+        passwordTF.tintColor = greenColor
     }
     
     
