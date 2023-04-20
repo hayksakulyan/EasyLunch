@@ -61,6 +61,8 @@ class RegisterViewController: UIViewController {
         let _ = shadow.applyGradient(colours: [UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0), UIColor(red: (0/255.0), green: (0/255.0), blue:(0/255.0), alpha: 0.5)], locations: [0, 1])
         passwordTF.isSecureTextEntry = true
         confirmPasswordTF.isSecureTextEntry = true
+        
+        haveAccountSignIn.tintColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
     }
     
   
@@ -73,7 +75,7 @@ class RegisterViewController: UIViewController {
         
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated: true, completion: nil)
+        self.present(nextViewController, animated: false, completion: nil)
         
     }
     

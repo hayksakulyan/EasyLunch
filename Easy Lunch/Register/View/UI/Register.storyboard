@@ -67,6 +67,7 @@
                                                             <constraint firstAttribute="width" secondItem="W6q-zR-lRn" secondAttribute="height" multiplier="1:1" id="LVu-IR-5g4"/>
                                                             <constraint firstAttribute="height" constant="24" id="y14-I3-auL"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                         <connections>
                                                             <action selector="checkboxBTNAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7dA-9J-6en"/>
@@ -104,7 +105,7 @@
                                                 <rect key="frame" x="0.0" y="136" width="393" height="48"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="dfS-Va-IcH">
-                                                        <rect key="frame" x="47" y="6" width="299" height="36"/>
+                                                        <rect key="frame" x="44.666666666666657" y="6" width="304" height="36"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account ?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" translatesAutoresizingMaskIntoConstraints="NO" id="3bW-tP-cXu">
                                                                 <rect key="frame" x="0.0" y="0.0" width="235" height="36"/>
@@ -113,11 +114,11 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="716-RI-Unk">
-                                                                <rect key="frame" x="238" y="0.0" width="61" height="36"/>
+                                                                <rect key="frame" x="238" y="0.0" width="66" height="36"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                                <state key="normal" title="Sign In"/>
+                                                                <state key="normal" title=" Sign In"/>
                                                                 <connections>
                                                                     <action selector="haveAccountSignInAction:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="sli-Vd-qWd"/>
                                                                 </connections>
