@@ -29,7 +29,6 @@ class SplashViewController: UIViewController {
         
         navigateFromSplash()
         
-        
     }
     
     

@@ -42,7 +42,15 @@ class RegisterViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         configUI()
+        register()
+        
     }
+    
+    
+    func register() {
+       
+    }
+    
     
     func configUI() {
         usernameTF.placeHolderColor = .white
@@ -127,6 +135,10 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBAction func signUpBTNAction(_ sender: UIButton) {
+        
+        print("ay qez ban ")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
