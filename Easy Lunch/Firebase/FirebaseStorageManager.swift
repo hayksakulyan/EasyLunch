@@ -42,27 +42,27 @@ class FirebaseStorageManager: NSObject {
                                                        "lastName" : lastName])
     }
     
-    func readUserData(callBack: @escaping(_ result: Result<UserModel, Error>) -> Void) {
-
-        if let userID = Auth.auth().currentUser?.uid {
-
-            ref.child("Users").child(userID).observeSingleEvent(of: .value) { snapShot, error in
-
-                if let snap = snapShot.value as? NSDictionary {
-
-                    let firstname = (snap["firstName"] as? String) ?? ""
-                    let lastName = (snap["lastName"] as? String) ?? ""
-                    var user = UserModel(firstname: firstname, lastName: lastName)
-                    callBack(.success(user))
-                } else {
-                    callBack(.failure(error as! Error))
-                }
-
-            }
-        }
-    }
+//    func readUserData(callBack: @escaping(_ result: Result<UserModel, Error>) -> Void) {
+//
+//        if let userID = Auth.auth().currentUser?.uid {
+//
+//            ref.child("Users").child(userID).observeSingleEvent(of: .value) { snapShot, error in
+//
+//                if let snap = snapShot.value as? NSDictionary {
+//
+//                    let firstname = (snap["firstName"] as? String) ?? ""
+//                    let lastName = (snap["lastName"] as? String) ?? ""
+//                    let user = UserModel(firstname: firstname, lastName: lastName)
+//                    callBack(.success(user))
+//                } else {
+//                    callBack(.failure(error as! Error))
+//                }
+//
+//            }
+//        }
+//    }
     
-    func readUserData2(callBack: @escaping(_ result: Result<UserModel, Error>) -> Void) {
+    func readUserData(callBack: @escaping(_ result: Result<UserModel, Error>) -> Void) {
         if let userID = Auth.auth().currentUser?.uid {
             
             ref.child("Users").child(userID).observeSingleEvent(of: .value, with: { snapShot in
@@ -70,7 +70,7 @@ class FirebaseStorageManager: NSObject {
 
                     let firstname = (snap["firstName"] as? String) ?? ""
                     let lastName = (snap["lastName"] as? String) ?? ""
-                    var user = UserModel(firstname: firstname, lastName: lastName)
+                    let user = UserModel(firstname: firstname, lastName: lastName)
                     
                     callBack(.success(user))
                 } else {

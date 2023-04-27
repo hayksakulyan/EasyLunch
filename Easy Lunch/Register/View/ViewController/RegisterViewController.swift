@@ -42,15 +42,15 @@ class RegisterViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         configUI()
-        register()
-        
+        TFdelegates()
     }
     
-    
-    func register() {
-       
+    func TFdelegates() {
+        usernameTF.delegate = self
+        emailTF.delegate = self
+        passwordTF.delegate = self
+        confirmPasswordTF.delegate = self
     }
-    
     
     func configUI() {
         usernameTF.placeHolderColor = .white
@@ -137,8 +137,43 @@ class RegisterViewController: UIViewController {
     
     @IBAction func signUpBTNAction(_ sender: UIButton) {
         
-        print("ay qez ban ")
+        print("signUP button action")
+        guard let username = usernameTF.text else {return}
+        guard let email = emailTF.text else {return}
+        guard let password = passwordTF.text else {return}
+        guard let confirmPassword = confirmPasswordTF.text else {return}
+        
+        registerUser(suername: username, email: email, password: password, confirmPassword: confirmPassword)
+    
     }
+    
+    func registerUser(suername: String, email: String, password: String, confirmPassword: String) {
+        
+        if !email.isValidEmail() {
+            wrongEmail.text = "Email is incorrect"
+        } else if email.isEmpty {
+            wrongEmail.text = "Email field can't be empty"
+        }
+        else {
+            FirebaseStorageManager.shared.registerUser(email: email, password: password) { result in
+                
+                switch result {
+                case .success(let authData):
+                    
+                    if let userID = authData?.user.uid {
+                        FirebaseStorageManager.shared.writeUserData(firstname: "Hayk", lastName: "Sakulyan", userID: userID)
+                    }
+                    
+                    print("s")
+                    
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+    }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -148,5 +183,14 @@ class RegisterViewController: UIViewController {
         return .lightContent
     }
 }
-
-
+//TODO: need to add keyboard will show will hide  functionality
+extension RegisterViewController: UITextFieldDelegate, UITextViewDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        
+        default:
+            break
+        }
+    }
+    
+}
