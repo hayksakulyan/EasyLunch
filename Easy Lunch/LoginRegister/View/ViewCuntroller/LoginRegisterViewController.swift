@@ -71,7 +71,9 @@ class LoginRegisterViewController: UIViewController {
         return .lightContent
     }
     
+    
 }
+
 
 
 

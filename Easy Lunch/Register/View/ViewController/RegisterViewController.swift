@@ -156,7 +156,7 @@ class RegisterViewController: UIViewController {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated: false, completion: nil)
+        self.present(nextViewController, animated: true, completion: nil)
     }
     
     func registerUser(suername: String, email: String, password: String, confirmPassword: String) {
