@@ -143,6 +143,7 @@ class RegisterViewController: UIViewController {
         guard let password = passwordTF.text else {return}
         guard let confirmPassword = confirmPasswordTF.text else {return}
         registerUser(suername: username, email: email, password: password, confirmPassword: confirmPassword)
+        sender.isUserInteractionEnabled = false
     }
     
     func mainPageStoryboard() {

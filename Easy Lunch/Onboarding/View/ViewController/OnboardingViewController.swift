@@ -8,8 +8,13 @@
 import UIKit
 
 class OnboardingViewController: UIViewController {
-
-   
+    
+    @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var colectionView: UICollectionView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var pageControll: UIPageControl!
+    @IBOutlet weak var nextBtn: UIButton!
+    
     
     var slides: [OnboardingSlide] = []
     
@@ -20,6 +25,9 @@ class OnboardingViewController: UIViewController {
     }
     
 
-   
+    @IBAction func nextBtnAction(_ sender: UIButton) {
+        
+    }
+    
 
 }
