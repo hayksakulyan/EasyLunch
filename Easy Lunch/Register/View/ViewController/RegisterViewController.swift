@@ -143,7 +143,7 @@ class RegisterViewController: UIViewController {
         guard let password = passwordTF.text else {return}
         guard let confirmPassword = confirmPasswordTF.text else {return}
         registerUser(suername: username, email: email, password: password, confirmPassword: confirmPassword)
-        sender.isUserInteractionEnabled = false
+//        sender.isUserInteractionEnabled = false
     }
     
     func mainPageStoryboard() {
@@ -152,11 +152,12 @@ class RegisterViewController: UIViewController {
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: false, completion: nil)
     }
-    func onboardingPageStoryboard() {
+    func onboardingPageStoryboard(uid: String) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: true, completion: nil)
+        nextViewController.uid = uid
     }
     
     func registerUser(suername: String, email: String, password: String, confirmPassword: String) {
@@ -174,19 +175,21 @@ class RegisterViewController: UIViewController {
                 case .success(let authData):
                     
                     guard let self = self else {return}
-                    self.onboardingPageStoryboard()
                     
                     //TODO: Need to add app onboarding here
                     
                     if let userID = authData?.user.uid {
-                        FirebaseStorageManager.shared.writeUserData(firstname: "Hayk", lastName: "Sakulyan", userID: userID)
+                        self.onboardingPageStoryboard(uid: userID)
+                        
+                        
+//                        FirebaseStorageManager.shared.writeUserData(firstname: "Hayk", lastName: "Sakulyan", userID: userID)
                     }
                     
                     print("Registration is success")
                     
                 case .failure(let error):
                     guard let self = self else {return}
-                    AlertManager.showRegistrationErrorAlert(on: self, with: error.localizedDescription as! Error)
+                    AlertManager.showRegistrationErrorAlert(on: self, with: error)
                     print(error.localizedDescription)
                 }
             }
@@ -245,18 +248,20 @@ extension RegisterViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hertov cursory mtnuma verjum helnum
-        if textField == usernameTF {
-               textField.resignFirstResponder()
-               emailTF.becomeFirstResponder()
-           } else if textField == emailTF {
-               textField.resignFirstResponder()
-               passwordTF.becomeFirstResponder()
-           } else if textField == passwordTF {
-               textField.resignFirstResponder()
-               confirmPasswordTF.becomeFirstResponder()
-           } else {
-               confirmPasswordTF.resignFirstResponder()
-           }
+        textField.resignFirstResponder()
+
+//        if textField == usernameTF {
+//               textField.resignFirstResponder()
+//               emailTF.becomeFirstResponder()
+//           } else if textField == emailTF {
+//               textField.resignFirstResponder()
+//               passwordTF.becomeFirstResponder()
+//           } else if textField == passwordTF {
+//               textField.resignFirstResponder()
+//               confirmPasswordTF.becomeFirstResponder()
+//           } else {
+//               confirmPasswordTF.resignFirstResponder()
+//           }
         return true
     }
     

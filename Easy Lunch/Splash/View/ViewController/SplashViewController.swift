@@ -61,11 +61,11 @@ class SplashViewController: UIViewController {
         // TODO: need to change second
         DispatchQueue.main.asyncAfter(deadline: .now() + 0){
 
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
-//
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginRegisterViewController") as! LoginRegisterViewController
-//            nextViewController.modalPresentationStyle = .fullScreen
-//            self.present(nextViewController, animated: true, completion: nil)
+            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginRegisterViewController") as! LoginRegisterViewController
+            nextViewController.modalPresentationStyle = .fullScreen
+            self.present(nextViewController, animated: true, completion: nil)
             
 //            let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
 //
@@ -73,10 +73,10 @@ class SplashViewController: UIViewController {
 //            nextViewController.modalPresentationStyle = .fullScreen
 //            self.present(nextViewController, animated: true, completion: nil)
             
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-            nextViewController.modalPresentationStyle = .fullScreen
-            self.present(nextViewController, animated: true, completion: nil)
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+//            nextViewController.modalPresentationStyle = .fullScreen
+//            self.present(nextViewController, animated: true, completion: nil)
             
             
 
