@@ -40,7 +40,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configUi()
         
     }
@@ -69,6 +68,8 @@ class LoginViewController: UIViewController {
         haventAccountSignUp.tintColor = greenColor
         usernameTF.tintColor = greenColor
         passwordTF.tintColor = greenColor
+        usernameTF.delegate = self
+        passwordTF.delegate = self
     }
     
     
@@ -124,6 +125,15 @@ class LoginViewController: UIViewController {
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+}
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+            usernameTF.becomeFirstResponder()
+        
+        return true
     }
     
 }

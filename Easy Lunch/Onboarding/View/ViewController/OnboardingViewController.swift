@@ -16,7 +16,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var shadow: UIView!
     @IBOutlet weak var topLbl: UILabel!
     @IBOutlet weak var firstNameTF: UITextField!
-    @IBOutlet weak var wrongLastNameLbl: UILabel!
+    @IBOutlet weak var wrongFirstNameLbl: UILabel!
     @IBOutlet weak var lastNameTF: UITextField!
     @IBOutlet weak var wrongLastnameLbl: UILabel!
     @IBOutlet weak var blackView: UIView!
@@ -25,7 +25,8 @@ class OnboardingViewController: UIViewController {
     var greenColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
     
     var colors = ColorsForGradients()
-    
+    let wrongUsername = "Firstname can't be empty"
+    let wrongLastname = "Lastname can't be empty"
     var uid: String?
     
     override func viewDidLoad() {
@@ -33,6 +34,13 @@ class OnboardingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         configUi()
+        setDelegates()
+        
+    }
+    
+    func setDelegates() {
+        firstNameTF.delegate = self
+        lastNameTF.delegate = self
     }
     func configUi() {
        
@@ -54,10 +62,32 @@ class OnboardingViewController: UIViewController {
         lastNameTF.tintColor = greenColor
     }
    
+    func writeData() {
+        guard let uid = uid else {return}
+        guard let firstname = firstNameTF.text else {return}
+        guard let lastname = lastNameTF.text else {return}
+    
+        
+        if firstname.isEmpty {
+            wrongFirstNameLbl.text = wrongUsername
+        } else if lastname.isEmpty {
+            wrongLastnameLbl.text = wrongLastname
+        } else {
+            FirebaseStorageManager.shared.writeUserData(firstname: firstname, lastName: lastname, userID: uid)
+        }
+        
+    }
+    func mainPageStoryboard() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "MainPage", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated: false, completion: nil)
+    }
     
     
     @IBAction func finishBtnAction(_ sender: UIButton) {
-//        print(uid!)
+        writeData()
+        mainPageStoryboard()
     }
     
    
@@ -71,5 +101,15 @@ class OnboardingViewController: UIViewController {
     }
 }
 
+extension OnboardingViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == firstNameTF {
+            textField.becomeFirstResponder()
+        } 
+ 
+        return true
+    }
+}
 
 

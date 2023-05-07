@@ -146,12 +146,7 @@ class RegisterViewController: UIViewController {
 //        sender.isUserInteractionEnabled = false
     }
     
-    func mainPageStoryboard() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "MainPage", bundle: nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated: false, completion: nil)
-    }
+    
     func onboardingPageStoryboard(uid: String) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
@@ -248,20 +243,18 @@ extension RegisterViewController: UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         // hertov cursory mtnuma verjum helnum
-        textField.resignFirstResponder()
-
-//        if textField == usernameTF {
-//               textField.resignFirstResponder()
-//               emailTF.becomeFirstResponder()
-//           } else if textField == emailTF {
-//               textField.resignFirstResponder()
-//               passwordTF.becomeFirstResponder()
-//           } else if textField == passwordTF {
-//               textField.resignFirstResponder()
-//               confirmPasswordTF.becomeFirstResponder()
-//           } else {
-//               confirmPasswordTF.resignFirstResponder()
-//           }
+        if textField == usernameTF {
+               textField.resignFirstResponder()
+               emailTF.becomeFirstResponder()
+           } else if textField == emailTF {
+               textField.resignFirstResponder()
+               passwordTF.becomeFirstResponder()
+           } else if textField == passwordTF {
+               textField.resignFirstResponder()
+               confirmPasswordTF.becomeFirstResponder()
+           } else {
+               confirmPasswordTF.resignFirstResponder()
+           }
         return true
     }
     

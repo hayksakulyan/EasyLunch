@@ -287,7 +287,7 @@
                         <outlet property="lastNameTF" destination="zYc-Yb-fEI" id="422-7Z-bcy"/>
                         <outlet property="shadow" destination="YjF-HX-RW1" id="E0T-2N-lmL"/>
                         <outlet property="topLbl" destination="Ota-9Z-hEf" id="Kyi-Zh-tcf"/>
-                        <outlet property="wrongLastNameLbl" destination="Pkr-sj-cZh" id="OUw-4M-OrC"/>
+                        <outlet property="wrongFirstNameLbl" destination="Pkr-sj-cZh" id="OUw-4M-OrC"/>
                         <outlet property="wrongLastnameLbl" destination="ZJe-ev-xMZ" id="zui-Ei-ocF"/>
                     </connections>
                 </viewController>
