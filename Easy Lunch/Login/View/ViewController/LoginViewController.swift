@@ -85,7 +85,11 @@ class LoginViewController: UIViewController {
     
     @IBAction func signInAction(_ sender: UIButton) {
         
-       
+        
+        
+        FirebaseStorageManager.shared.loginUser(email: String, password: <#T##String#>) { result in
+            <#code#>
+        }
     }
     
     

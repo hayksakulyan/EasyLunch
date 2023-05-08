@@ -73,7 +73,7 @@ class OnboardingViewController: UIViewController {
         } else if lastname.isEmpty {
             wrongLastnameLbl.text = wrongLastname
         } else {
-            FirebaseStorageManager.shared.writeUserData(firstname: firstname, lastName: lastname, userID: uid)
+            FirebaseStorageManager.shared.writeUserData(firstName: firstname, lastName: lastname, userID: uid)
         }
         
     }
