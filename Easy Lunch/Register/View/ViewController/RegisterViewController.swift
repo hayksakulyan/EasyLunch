@@ -8,8 +8,7 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
-    
-    
+     
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var wrongUsername: UILabel!
     @IBOutlet weak var emailTF: UITextField!
@@ -30,18 +29,44 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passwordEye: UIButton!
     @IBOutlet weak var confirmPasswordEye: UIButton!
     
+    
+    
     var checkboxChecked: Bool = false
     var checked = UIImage(systemName: "checkmark")
     var greenColor = UIColor(red: (0/255.0), green: (127/255.0), blue:(95/255.0), alpha: 1)
-    
+    let image1 = UIImage(systemName: "eye.slash")
+    let image2 = UIImage(systemName: "eye")
     var colors = ColorsForGradients()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         configUI()
+        TFdelegates()
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+//
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+    }
+    
+//    @objc func keyboardWillShow(_ notification: Notification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            self.blackView.frame.origin.y -= 60
+//        }
+//    }
+//    @objc func keyboardWillHide(_ notification: Notification) {
+//        if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+//            self.blackView.frame.origin.y += 60
+//        }
+//    }
+    
+    func TFdelegates() {
+        usernameTF.delegate = self
+        emailTF.delegate = self
+        passwordTF.delegate = self
+        confirmPasswordTF.delegate = self
     }
     
     func configUI() {
@@ -69,26 +94,15 @@ class RegisterViewController: UIViewController {
         confirmPasswordTF.tintColor = greenColor
         passwordTF.tintColor = greenColor
     }
-    
-  
-    
-    
-    
+ 
     @IBAction func haveAccountSignInAction(_ sender: UIButton) {
-        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-        
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: false, completion: nil)
-        
     }
     
-    let image1 = UIImage(systemName: "eye.slash")
-    let image2 = UIImage(systemName: "eye")
-    
     @IBAction func eyeAction(_ sender: UIButton) {
-        
         switch sender.tag{
         case 1:
             if passwordTF.isSecureTextEntry == true {
@@ -102,21 +116,16 @@ class RegisterViewController: UIViewController {
             if confirmPasswordTF.isSecureTextEntry == true {
                 confirmPasswordTF.isSecureTextEntry = false
                 confirmPasswordEye.setImage(image2, for: .normal)
-
             } else {
                 confirmPasswordTF.isSecureTextEntry = true
                 confirmPasswordEye.setImage(image1, for: .normal)
-
             }
         default:
             break
         }
-        
     }
     
-    
     @IBAction func checkboxBTNAction(_ sender: UIButton) {
-        
         if checkboxChecked == false {
             checkboxBTN.setImage(checked, for: .normal)
             checkboxBTN.tintColor = .white
@@ -127,6 +136,54 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBAction func signUpBTNAction(_ sender: UIButton) {
+        print("signUP button action")
+        guard let username = usernameTF.text else {return}
+        guard let email = emailTF.text else {return}
+        guard let password = passwordTF.text else {return}
+        guard let confirmPassword = confirmPasswordTF.text else {return}
+        registerUser(suername: username, email: email, password: password, confirmPassword: confirmPassword)
+//        sender.isUserInteractionEnabled = false
+    }
+    
+    
+    func onboardingPageStoryboard(uid: String) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.present(nextViewController, animated: true, completion: nil)
+        nextViewController.uid = uid
+    }
+    
+    func registerUser(suername: String, email: String, password: String, confirmPassword: String) {
+        if !email.isValidEmail() {
+            wrongEmail.text = "Email is incorrect"
+        } else if email.isEmpty {
+            wrongEmail.text = "Email field can't be empty"
+        } else if password != confirmPassword {
+            wrongConfirm.text = "Password confirmation error"
+        }
+        else {
+            FirebaseStorageManager.shared.registerUser(email: email, password: password) {[weak self] result in
+                
+                switch result {
+                case .success(let authData):
+                    guard let self = self else {return}
+                    
+                    if let userID = authData?.user.uid {
+                        self.onboardingPageStoryboard(uid: userID)
+                    }
+//                    print("Registration is success")
+                    
+                case .failure(let error):
+                    guard let self = self else {return}
+                    AlertManager.showRegistrationErrorAlert(on: self, with: error)
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
+  
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -136,5 +193,69 @@ class RegisterViewController: UIViewController {
         return .lightContent
     }
 }
+//TODO: need to add keyboard will show will hide  functionality
+extension RegisterViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        // sksvela editingy
+        wrongEmail.text = ""
 
+    }
+
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    }
+
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+
+    func textFieldDidChangeSelection(_ textField: UITextField){
+
+    }
+
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        return true
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        // hertov cursory mtnuma verjum helnum
+        if textField == usernameTF {
+               textField.resignFirstResponder()
+               emailTF.becomeFirstResponder()
+           } else if textField == emailTF {
+               textField.resignFirstResponder()
+               passwordTF.becomeFirstResponder()
+           } else if textField == passwordTF {
+               textField.resignFirstResponder()
+               confirmPasswordTF.becomeFirstResponder()
+           } else {
+               confirmPasswordTF.resignFirstResponder()
+           }
+        return true
+    }
+    
+//    func textField(_ textField: UITextField, editMenuForCharactersIn range: NSRange, suggestedActions: [UIMenuElement]) -> UIMenu? {
+//
+//    }
+//
+//    func textField(_ textField: UITextField, willPresentEditMenuWith animator: UIEditMenuInteractionAnimating) {
+//
+//    }
+//
+//    func textField(_ textField: UITextField, willDismissEditMenuWith animator: UIEditMenuInteractionAnimating) {
+//
+//    }
+    
+}
