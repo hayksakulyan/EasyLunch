@@ -168,19 +168,12 @@ class RegisterViewController: UIViewController {
                 
                 switch result {
                 case .success(let authData):
-                    
                     guard let self = self else {return}
-                    
-                    //TODO: Need to add app onboarding here
                     
                     if let userID = authData?.user.uid {
                         self.onboardingPageStoryboard(uid: userID)
-                        
-                        
-//                        FirebaseStorageManager.shared.writeUserData(firstname: "Hayk", lastName: "Sakulyan", userID: userID)
                     }
-                    
-                    print("Registration is success")
+//                    print("Registration is success")
                     
                 case .failure(let error):
                     guard let self = self else {return}
@@ -189,7 +182,6 @@ class RegisterViewController: UIViewController {
                 }
             }
         }
-        
     }
   
     
@@ -205,7 +197,6 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        // toxum em edit anel
         return true
     }
 
@@ -216,9 +207,6 @@ extension RegisterViewController: UITextFieldDelegate {
     }
 
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        // verjacela editingy
-        
-//        print("Karelia edit anel ?")
         return true
     }
 

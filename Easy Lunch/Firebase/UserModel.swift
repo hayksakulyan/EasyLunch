@@ -10,5 +10,4 @@ import Foundation
 struct UserModel {
     let firstName: String
     let lastName: String
-    
 }
