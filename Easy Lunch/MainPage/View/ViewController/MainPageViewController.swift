@@ -6,8 +6,8 @@
 //
 
 import UIKit
-//import Firebase
 import FirebaseAuth
+import SnapKit
 
 class MainPageViewController: UIViewController {
     @IBOutlet weak var firstName: UILabel!

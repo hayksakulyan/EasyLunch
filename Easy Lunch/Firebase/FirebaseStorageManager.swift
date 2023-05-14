@@ -65,6 +65,7 @@ class FirebaseStorageManager: NSObject {
             return true
         } catch {
             let error = error.localizedDescription
+            print(error)
         }
         return false
     }

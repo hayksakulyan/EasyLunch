@@ -10,7 +10,7 @@ import UIKit
 
 class SplashViewController: UIViewController {
     
-
+    
     @IBOutlet weak var background: UIImageView!
     
     @IBOutlet weak var viewBack: UIView!
@@ -46,10 +46,10 @@ class SplashViewController: UIViewController {
     }
     
     //TODO: for example, this metod called only 1 time
-//    override func loadView() {
-//        super.loadView()
-//        UIApplication.shared.statusBarStyle = .lightContent
-//    }
+    //    override func loadView() {
+    //        super.loadView()
+    //        UIApplication.shared.statusBarStyle = .lightContent
+    //    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -60,26 +60,31 @@ class SplashViewController: UIViewController {
     func navigateFromSplash() {
         // TODO: need to change second
         DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-
-            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
-            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginRegisterViewController") as! LoginRegisterViewController
-            nextViewController.modalPresentationStyle = .fullScreen
-            self.present(nextViewController, animated: true, completion: nil)
-            
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+//
+//            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
+//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginRegisterViewController") as! LoginRegisterViewController
 //            nextViewController.modalPresentationStyle = .fullScreen
 //            self.present(nextViewController, animated: true, completion: nil)
             
-//            let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
-//            nextViewController.modalPresentationStyle = .fullScreen
-//            self.present(nextViewController, animated: true, completion: nil)
+            //            let storyBoard: UIStoryboard = UIStoryboard(name: "Login", bundle: nil)
+            //            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            //            nextViewController.modalPresentationStyle = .fullScreen
+            //            self.present(nextViewController, animated: true, completion: nil)
+            
+            //            let storyBoard: UIStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+            //            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
+            //            nextViewController.modalPresentationStyle = .fullScreen
+            //            self.present(nextViewController, animated: true, completion: nil)
+            
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "Emploee", bundle: nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmploeeViewController") as! EmploeeViewController
+                        nextViewController.modalPresentationStyle = .fullScreen
+                        self.present(nextViewController, animated: true, completion: nil)
             
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

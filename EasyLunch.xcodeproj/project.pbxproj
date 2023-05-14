@@ -11,6 +11,11 @@
 		62165FF129E00BAE00A8D66D /* ColorsForGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62165FF029E00BAE00A8D66D /* ColorsForGradients.swift */; };
 		622AFF5329D860EA00C4D58C /* LoginRegister.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 622AFF5229D860EA00C4D58C /* LoginRegister.storyboard */; };
 		622AFF5529D8962200C4D58C /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622AFF5429D8962200C4D58C /* LoginRegisterViewController.swift */; };
+		624839DE2A0D552C003F5E8D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 624839DD2A0D552C003F5E8D /* SnapKit */; };
+		624839E12A0E3161003F5E8D /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839E02A0E3161003F5E8D /* NetworkManager.swift */; };
+		624839EB2A0E337B003F5E8D /* Emploee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624839EA2A0E337B003F5E8D /* Emploee.storyboard */; };
+		624839EF2A0E33F2003F5E8D /* EmploeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839EE2A0E33F2003F5E8D /* EmploeeViewModel.swift */; };
+		624839F12A0E348D003F5E8D /* EmploeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839F02A0E348D003F5E8D /* EmploeeViewController.swift */; };
 		6258A34E29D0569E00B667C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A34D29D0569E00B667C6 /* AppDelegate.swift */; };
 		6258A35029D0569E00B667C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A34F29D0569E00B667C6 /* SceneDelegate.swift */; };
 		6258A35229D0569E00B667C6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A35129D0569E00B667C6 /* SplashViewController.swift */; };
@@ -25,6 +30,7 @@
 		6292883829F65E950095C449 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6292883729F65E950095C449 /* FirebaseFirestore */; };
 		6292883A29F65E950095C449 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6292883929F65E950095C449 /* FirebaseStorage */; };
 		6292883E29F67A380095C449 /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6292883D29F67A380095C449 /* FirebaseStorageManager.swift */; };
+		62959EAF2A0D150A00E84E90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 62959EAE2A0D150A00E84E90 /* Alamofire */; };
 		62A97EC129F7FF5100CF84D4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A97EC029F7FF5100CF84D4 /* UserModel.swift */; };
 		62BEF32529E06E0100ECCD47 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62BEF32429E06E0100ECCD47 /* Register.storyboard */; };
 		62BEF32729E06E1000ECCD47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BEF32629E06E1000ECCD47 /* RegisterViewController.swift */; };
@@ -41,6 +47,10 @@
 		62165FF029E00BAE00A8D66D /* ColorsForGradients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorsForGradients.swift; sourceTree = "<group>"; };
 		622AFF5229D860EA00C4D58C /* LoginRegister.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginRegister.storyboard; sourceTree = "<group>"; };
 		622AFF5429D8962200C4D58C /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
+		624839E02A0E3161003F5E8D /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		624839EA2A0E337B003F5E8D /* Emploee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emploee.storyboard; sourceTree = "<group>"; };
+		624839EE2A0E33F2003F5E8D /* EmploeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploeeViewModel.swift; sourceTree = "<group>"; };
+		624839F02A0E348D003F5E8D /* EmploeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploeeViewController.swift; sourceTree = "<group>"; };
 		6258A34A29D0569E00B667C6 /* EasyLunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6258A34D29D0569E00B667C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6258A34F29D0569E00B667C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +81,8 @@
 				6292883629F65E950095C449 /* FirebaseDatabaseSwift in Frameworks */,
 				6292883829F65E950095C449 /* FirebaseFirestore in Frameworks */,
 				6292883429F65E950095C449 /* FirebaseDatabase in Frameworks */,
+				624839DE2A0D552C003F5E8D /* SnapKit in Frameworks */,
+				62959EAF2A0D150A00E84E90 /* Alamofire in Frameworks */,
 				6292883A29F65E950095C449 /* FirebaseStorage in Frameworks */,
 				6292883229F65E950095C449 /* FirebaseAuth in Frameworks */,
 			);
@@ -79,13 +91,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		62165FED29DFFEBA00A8D66D /* Dependencies */ = {
+		62165FED29DFFEBA00A8D66D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				62165FEE29DFFEDF00A8D66D /* Extensions.swift */,
 				62E7FE9829FAF3EE00D06F67 /* AlertManager.swift */,
 			);
-			path = Dependencies;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		622AFF4F29D85C3A00C4D58C /* LoginRegister */ = {
@@ -110,6 +122,64 @@
 			isa = PBXGroup;
 			children = (
 				622AFF5229D860EA00C4D58C /* LoginRegister.storyboard */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		624839DF2A0E3027003F5E8D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				624839E02A0E3161003F5E8D /* NetworkManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		624839E42A0E333D003F5E8D /* Emploers */ = {
+			isa = PBXGroup;
+			children = (
+				624839E72A0E335D003F5E8D /* Model */,
+				624839E62A0E3356003F5E8D /* View */,
+				624839E52A0E334F003F5E8D /* ViewModel */,
+			);
+			path = Emploers;
+			sourceTree = "<group>";
+		};
+		624839E52A0E334F003F5E8D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				624839EE2A0E33F2003F5E8D /* EmploeeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		624839E62A0E3356003F5E8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				624839E92A0E3368003F5E8D /* UI */,
+				624839E82A0E3361003F5E8D /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		624839E72A0E335D003F5E8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		624839E82A0E3361003F5E8D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				624839F02A0E348D003F5E8D /* EmploeeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		624839E92A0E3368003F5E8D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				624839EA2A0E337B003F5E8D /* Emploee.storyboard */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -140,10 +210,12 @@
 		6258A34C29D0569E00B667C6 /* Easy Lunch */ = {
 			isa = PBXGroup;
 			children = (
+				624839E42A0E333D003F5E8D /* Emploers */,
+				624839DF2A0E3027003F5E8D /* Helpers */,
 				62E02E722A00F2220013B37A /* Onboarding */,
 				62E7FE9A29FB85BC00D06F67 /* MainPage */,
 				6292883B29F679DE0095C449 /* Firebase */,
-				62165FED29DFFEBA00A8D66D /* Dependencies */,
+				62165FED29DFFEBA00A8D66D /* Extensions */,
 				622AFF4F29D85C3A00C4D58C /* LoginRegister */,
 				6258A36329D056D900B667C6 /* Splash */,
 				6258A36A29D0572400B667C6 /* Register */,
@@ -475,6 +547,8 @@
 				6292883529F65E950095C449 /* FirebaseDatabaseSwift */,
 				6292883729F65E950095C449 /* FirebaseFirestore */,
 				6292883929F65E950095C449 /* FirebaseStorage */,
+				62959EAE2A0D150A00E84E90 /* Alamofire */,
+				624839DD2A0D552C003F5E8D /* SnapKit */,
 			);
 			productName = "Easy Lunch";
 			productReference = 6258A34A29D0569E00B667C6 /* EasyLunch.app */;
@@ -506,6 +580,8 @@
 			mainGroup = 6258A34129D0569E00B667C6;
 			packageReferences = (
 				6292883029F65E950095C449 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				62959EAD2A0D150A00E84E90 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				624839DC2A0D552C003F5E8D /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 6258A34B29D0569E00B667C6 /* Products */;
 			projectDirPath = "";
@@ -527,6 +603,7 @@
 				622AFF5329D860EA00C4D58C /* LoginRegister.storyboard in Resources */,
 				62E7FEA129FB866700D06F67 /* MainPage.storyboard in Resources */,
 				6258A35729D0569F00B667C6 /* Assets.xcassets in Resources */,
+				624839EB2A0E337B003F5E8D /* Emploee.storyboard in Resources */,
 				6265C9662A04BBBE00E2A57F /* Onboarding.storyboard in Resources */,
 				6258A35529D0569E00B667C6 /* Main.storyboard in Resources */,
 				6292882F29F65A5D0095C449 /* GoogleService-Info.plist in Resources */,
@@ -544,12 +621,15 @@
 				62165FEF29DFFEDF00A8D66D /* Extensions.swift in Sources */,
 				62E7FE9929FAF3EE00D06F67 /* AlertManager.swift in Sources */,
 				6258A35229D0569E00B667C6 /* SplashViewController.swift in Sources */,
+				624839EF2A0E33F2003F5E8D /* EmploeeViewModel.swift in Sources */,
 				62BEF32729E06E1000ECCD47 /* RegisterViewController.swift in Sources */,
 				62E7FEA329FB868A00D06F67 /* MainPageViewController.swift in Sources */,
 				6258A34E29D0569E00B667C6 /* AppDelegate.swift in Sources */,
 				6292883E29F67A380095C449 /* FirebaseStorageManager.swift in Sources */,
 				62D8C1DB29E6D4E7006287B4 /* LoginViewController.swift in Sources */,
 				62165FF129E00BAE00A8D66D /* ColorsForGradients.swift in Sources */,
+				624839E12A0E3161003F5E8D /* NetworkManager.swift in Sources */,
+				624839F12A0E348D003F5E8D /* EmploeeViewController.swift in Sources */,
 				6258A35029D0569E00B667C6 /* SceneDelegate.swift in Sources */,
 				62A97EC129F7FF5100CF84D4 /* UserModel.swift in Sources */,
 				622AFF5529D8962200C4D58C /* LoginRegisterViewController.swift in Sources */,
@@ -782,6 +862,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		624839DC2A0D552C003F5E8D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		6292883029F65E950095C449 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -790,9 +878,22 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		62959EAD2A0D150A00E84E90 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		624839DD2A0D552C003F5E8D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 624839DC2A0D552C003F5E8D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
 		6292883129F65E950095C449 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6292883029F65E950095C449 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -817,6 +918,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6292883029F65E950095C449 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		62959EAE2A0D150A00E84E90 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 62959EAD2A0D150A00E84E90 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
