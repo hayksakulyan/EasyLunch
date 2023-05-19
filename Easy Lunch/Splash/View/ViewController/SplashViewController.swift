@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 
 
+
 class SplashViewController: UIViewController {
     
     
@@ -59,7 +60,7 @@ class SplashViewController: UIViewController {
     
     func navigateFromSplash() {
         // TODO: need to change second
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0){
 //
 //            let storyBoard: UIStoryboard = UIStoryboard(name: "LoginRegister", bundle: nil)
 //            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginRegisterViewController") as! LoginRegisterViewController
@@ -75,9 +76,15 @@ class SplashViewController: UIViewController {
             //            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "OnboardingViewController") as! OnboardingViewController
             //            nextViewController.modalPresentationStyle = .fullScreen
             //            self.present(nextViewController, animated: true, completion: nil)
+//
+//                        let storyBoard: UIStoryboard = UIStoryboard(name: "Emploee", bundle: nil)
+//                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmploeeViewController") as! EmploeeViewController
+//                        nextViewController.modalPresentationStyle = .fullScreen
+//                        self.present(nextViewController, animated: true, completion: nil)
             
-                        let storyBoard: UIStoryboard = UIStoryboard(name: "Emploee", bundle: nil)
-                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EmploeeViewController") as! EmploeeViewController
+            
+                        let storyBoard: UIStoryboard = UIStoryboard(name: "MainPage", bundle: nil)
+                        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "MainPageViewController") as! MainPageViewController
                         nextViewController.modalPresentationStyle = .fullScreen
                         self.present(nextViewController, animated: true, completion: nil)
             

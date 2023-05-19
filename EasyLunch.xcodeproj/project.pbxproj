@@ -16,6 +16,8 @@
 		624839EB2A0E337B003F5E8D /* Emploee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 624839EA2A0E337B003F5E8D /* Emploee.storyboard */; };
 		624839EF2A0E33F2003F5E8D /* EmploeeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839EE2A0E33F2003F5E8D /* EmploeeViewModel.swift */; };
 		624839F12A0E348D003F5E8D /* EmploeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839F02A0E348D003F5E8D /* EmploeeViewController.swift */; };
+		624839F32A115E36003F5E8D /* EmploeeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624839F22A115E36003F5E8D /* EmploeeData.swift */; };
+		62483A022A14EE22003F5E8D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62483A012A14EE22003F5E8D /* MenuViewController.swift */; };
 		6258A34E29D0569E00B667C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A34D29D0569E00B667C6 /* AppDelegate.swift */; };
 		6258A35029D0569E00B667C6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A34F29D0569E00B667C6 /* SceneDelegate.swift */; };
 		6258A35229D0569E00B667C6 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6258A35129D0569E00B667C6 /* SplashViewController.swift */; };
@@ -32,6 +34,8 @@
 		6292883E29F67A380095C449 /* FirebaseStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6292883D29F67A380095C449 /* FirebaseStorageManager.swift */; };
 		62959EAF2A0D150A00E84E90 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 62959EAE2A0D150A00E84E90 /* Alamofire */; };
 		62A97EC129F7FF5100CF84D4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62A97EC029F7FF5100CF84D4 /* UserModel.swift */; };
+		62B85D0D2A16266F004965B9 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B85D0B2A16266F004965B9 /* TableViewCell.swift */; };
+		62B85D0E2A16266F004965B9 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62B85D0C2A16266F004965B9 /* TableViewCell.xib */; };
 		62BEF32529E06E0100ECCD47 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62BEF32429E06E0100ECCD47 /* Register.storyboard */; };
 		62BEF32729E06E1000ECCD47 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BEF32629E06E1000ECCD47 /* RegisterViewController.swift */; };
 		62D8C1DB29E6D4E7006287B4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D8C1DA29E6D4E7006287B4 /* LoginViewController.swift */; };
@@ -51,6 +55,8 @@
 		624839EA2A0E337B003F5E8D /* Emploee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Emploee.storyboard; sourceTree = "<group>"; };
 		624839EE2A0E33F2003F5E8D /* EmploeeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploeeViewModel.swift; sourceTree = "<group>"; };
 		624839F02A0E348D003F5E8D /* EmploeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploeeViewController.swift; sourceTree = "<group>"; };
+		624839F22A115E36003F5E8D /* EmploeeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmploeeData.swift; sourceTree = "<group>"; };
+		62483A012A14EE22003F5E8D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		6258A34A29D0569E00B667C6 /* EasyLunch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyLunch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6258A34D29D0569E00B667C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6258A34F29D0569E00B667C6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +69,8 @@
 		6292882E29F65A5D0095C449 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6292883D29F67A380095C449 /* FirebaseStorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorageManager.swift; sourceTree = "<group>"; };
 		62A97EC029F7FF5100CF84D4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		62B85D0B2A16266F004965B9 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		62B85D0C2A16266F004965B9 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		62BEF32429E06E0100ECCD47 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		62BEF32629E06E1000ECCD47 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		62D8C1DA29E6D4E7006287B4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +172,7 @@
 		624839E72A0E335D003F5E8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				624839F22A115E36003F5E8D /* EmploeeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -371,6 +380,15 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		62B85D0A2A1625FE004965B9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				62B85D0B2A16266F004965B9 /* TableViewCell.swift */,
+				62B85D0C2A16266F004965B9 /* TableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		62BEF32229E06DEB00ECCD47 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,6 +516,7 @@
 			children = (
 				62E7FE9F29FB85ED00D06F67 /* UI */,
 				62E7FE9E29FB85E400D06F67 /* ViewController */,
+				62B85D0A2A1625FE004965B9 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -513,6 +532,7 @@
 			isa = PBXGroup;
 			children = (
 				62E7FEA229FB868A00D06F67 /* MainPageViewController.swift */,
+				62483A012A14EE22003F5E8D /* MenuViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -598,6 +618,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6258A35A29D0569F00B667C6 /* LaunchScreen.storyboard in Resources */,
+				62B85D0E2A16266F004965B9 /* TableViewCell.xib in Resources */,
 				62BEF32529E06E0100ECCD47 /* Register.storyboard in Resources */,
 				62F4DD9129EBCC3B00FC681D /* Login.storyboard in Resources */,
 				622AFF5329D860EA00C4D58C /* LoginRegister.storyboard in Resources */,
@@ -621,6 +642,7 @@
 				62165FEF29DFFEDF00A8D66D /* Extensions.swift in Sources */,
 				62E7FE9929FAF3EE00D06F67 /* AlertManager.swift in Sources */,
 				6258A35229D0569E00B667C6 /* SplashViewController.swift in Sources */,
+				62B85D0D2A16266F004965B9 /* TableViewCell.swift in Sources */,
 				624839EF2A0E33F2003F5E8D /* EmploeeViewModel.swift in Sources */,
 				62BEF32729E06E1000ECCD47 /* RegisterViewController.swift in Sources */,
 				62E7FEA329FB868A00D06F67 /* MainPageViewController.swift in Sources */,
@@ -628,7 +650,9 @@
 				6292883E29F67A380095C449 /* FirebaseStorageManager.swift in Sources */,
 				62D8C1DB29E6D4E7006287B4 /* LoginViewController.swift in Sources */,
 				62165FF129E00BAE00A8D66D /* ColorsForGradients.swift in Sources */,
+				624839F32A115E36003F5E8D /* EmploeeData.swift in Sources */,
 				624839E12A0E3161003F5E8D /* NetworkManager.swift in Sources */,
+				62483A022A14EE22003F5E8D /* MenuViewController.swift in Sources */,
 				624839F12A0E348D003F5E8D /* EmploeeViewController.swift in Sources */,
 				6258A35029D0569E00B667C6 /* SceneDelegate.swift in Sources */,
 				62A97EC129F7FF5100CF84D4 /* UserModel.swift in Sources */,

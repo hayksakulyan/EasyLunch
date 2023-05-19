@@ -24,20 +24,20 @@ class EmploeeViewModel {
     
     
     
-    func getEmploeeList() {
+    func getEmploeeList(complation: @escaping([Emploee]) -> Void) {
         
-                AF.request(endpointGenerator(endpoint: getAllEmployeeData), method: .get, parameters: nil, headers: ["Content-Type" : "application/json"]).responseJSON { response in
-                    print(response)
-//                    switch response.response?.statusCode {
-//                    case 200...300:
-//                        print("")
-//                    case 302...400:
-//                        print("")
-//                    case 400...499:
-//                        print("")
-//                    default:
-//                        break
-//                    }
+                AF.request(endpointGenerator(endpoint: getAllEmployeeData), method: .get, parameters: nil, headers: ["Content-Type" : "application/json"]).responseJSON { result in
+                    print(result)
+                    
+
+                    let jsonDecoder = JSONDecoder()
+                    do {
+                        let persons = try jsonDecoder.decode(EmploeeData.self, from: result.data!)
+                        complation(persons.data)
+                    } catch let error {
+                        print(error.localizedDescription)
+                        
+                        }
                 }
         
 //        AF.request(endpointGenerator(endpoint: getAllEmployeeData), method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil, interceptor: nil).response { response in

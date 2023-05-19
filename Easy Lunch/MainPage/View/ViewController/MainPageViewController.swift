@@ -24,8 +24,8 @@ class MainPageViewController: UIViewController {
             let userID = Auth.auth().currentUser?.uid
             switch result {
             case .success(let userData):
-                self.lastName.text = userData.firstName
-                self.lastName.text! += userData.lastName
+//                self.lastName.text = userData.firstName
+//                self.lastName.text! += userData.lastName
                 
                 print(userData.firstName)
             case .failure(.userNotFound):
@@ -49,13 +49,17 @@ class MainPageViewController: UIViewController {
     }
     
     
-    @IBAction func signUotAction(_ sender: UIButton) {
-        if signOut () {
-            moveToSignIn()
-        } else {
-            print("chexav aper")
-        }
-        
-        
-    }
+//    @IBAction func signUotAction(_ sender: UIButton) {
+//        if signOut () {
+//            moveToSignIn()
+//        } else {
+//            print("chexav aper")
+//        }
+//
+//
+//    }
+    
+    
+  
+    
 }

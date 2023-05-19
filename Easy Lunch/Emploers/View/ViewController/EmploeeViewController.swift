@@ -13,7 +13,9 @@ class EmploeeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emploeeViewModel.getEmploeeList()
+        emploeeViewModel.getEmploeeList(complation: { list in
+            print(list)
+        })
     }
     
 
